@@ -1,57 +1,114 @@
-🚀 Cloud-Native E-Commerce Deployment & Observability
-📌 Project Overview
-This project demonstrates a production-grade DevOps workflow by deploying a complex microservices-based e-commerce platform (Google's Online Boutique) on a Kubernetes cluster. It showcases full automation through Infrastructure as Code (IaC), Container Orchestration, and Full-stack Observability.
+🚀 Cloud-Native E-Commerce Platform on Kubernetes
+☸️ DevOps | Terraform | Kubernetes | Helm | Prometheus | Grafana
+📌 Project Overview 🧩
 
-🛠 Tech Stack
-Infrastructure as Code (IaC): Terraform
+This project demonstrates a production-grade cloud-native DevOps workflow by deploying Google’s Online Boutique, a microservices-based e-commerce platform, on a Kubernetes cluster.
 
-Orchestration: Kubernetes (Multi-node Kind Cluster)
+It showcases end-to-end automation, container orchestration, and full-stack observability using industry-standard tools.
 
-Package Management: Helm
+🛠 Tech Stack 🔧
+Layer	Technology
+🏗 Infrastructure as Code	Terraform
+☸️ Container Orchestration	Kubernetes (Multi-Node Kind Cluster)
+📦 Package Management	Helm
+📊 Monitoring & Observability	Prometheus, Grafana
+🧩 Application	11 Polyglot Microservices (Go, Python, Node.js, etc.)
+🏗 Architecture & Implementation Highlights 🏛️
+⚙️ Automated Infrastructure Provisioning
 
-Observability: Prometheus & Grafana
+Fully automated multi-node Kubernetes cluster using Terraform & Kind
 
-Application: 11 Polyglot Microservices (Go, Python, Node.js, etc.)
+Cluster configuration:
 
-🏗 Implementation Highlights
-1. Automated Infrastructure Provisioning
-Leveraged Terraform to automate the creation of a local multi-node Kubernetes cluster (1 Control-plane, 1 Worker node) using the Kind provider.
+🧠 1 Control Plane Node
 
-Successfully provisioned the entire environment in 2 minutes 20 seconds.
+🧱 1 Worker Node
 
-2. Microservices Orchestration
-Deployed 11 interconnected microservices managing everything from the frontend to payment processing.
+⏱️ Complete setup in ~2 minutes 20 seconds
 
-Ensured high availability with all pods verified in a Running state.
+♻️ Infrastructure lifecycle managed via Terraform
 
-Configured Port-forwarding to enable local access to the production-style frontend.
+☸️ Microservices Deployment
 
-3. Enterprise Monitoring Stack
-Deployed Prometheus and Grafana using Helm charts for real-time cluster health tracking.
+Deployed 11 interconnected microservices, including:
 
-Patched the Metrics Server to allow secure resource monitoring within the local Kind environment.
+🛒 Frontend
 
-Built dynamic dashboards to visualize critical metrics, such as a 15.8% CPU utilization across services.
+📦 Cart Service
 
-📊 Project Proof
-Kubernetes Pods Status
-Figure 1: All microservices successfully deployed and running.
+💳 Payment Service
 
-Grafana Live Monitoring Dashboard
-Figure 2: Real-time resource utilization metrics.
+📃 Product Catalog
 
-Terraform Infrastructure Setup
-Figure 3: Automated cluster creation log.
+✅ All pods verified in Running state
 
-🚀 Getting Started
-Initialize Infrastructure: terraform apply --auto-approve
+🔌 Port-forwarding enabled for local access
 
-Deploy Application: kubectl apply -f ./release/kubernetes-manifests.yaml
+📊 Observability & Monitoring
 
-Access Monitoring: kubectl port-forward deployment/monitoring-grafana 3000:3000
+📦 Prometheus & Grafana deployed using Helm
 
-⚠️ Final Step (Cleanup)
-To free up local system resources after testing, run:
+🔧 Metrics Server patched for Kind compatibility
 
-PowerShell
+📈 Custom dashboards created to monitor:
+
+CPU & Memory usage
+
+Pod & Node health
+
+🔍 Observed ~15.8% CPU utilization across services
+
+📸 Project Screenshots & Proof 🧪
+🟢 Kubernetes Pods Status
+
+All microservices running successfully
+
+<p align="center"> <img src="Screenshots/Screenshot%20(1453).png" width="850"/> </p>
+📊 Grafana Live Monitoring Dashboard
+
+Real-time cluster resource utilization
+
+<p align="center"> <img src="Screenshots/Screenshot%20(1454).png" width="850"/> </p>
+⚙️ Terraform Infrastructure Setup
+
+Automated Kind cluster creation logs
+
+<p align="center"> <img src="Screenshots/Screenshot%20(1455).png" width="850"/> </p>
+🚀 Getting Started 🧑‍💻
+1️⃣ Provision Infrastructure
+terraform apply --auto-approve
+2️⃣ Deploy Application
+kubectl apply -f ./release/kubernetes-manifests.yaml
+3️⃣ Access Grafana Dashboard
+kubectl port-forward deployment/monitoring-grafana 3000:3000
+
+🌐 Open browser:
+
+http://localhost:3000
+🧹 Cleanup (Important) ⚠️
+
+To free up local system resources after testing:
+
 terraform destroy --auto-approve
+🎯 Key Learnings & Outcomes 🎓
+
+✔️ Hands-on Kubernetes & Terraform experience
+✔️ Real-world microservices orchestration
+✔️ End-to-end monitoring & observability
+✔️ Production-style DevOps workflow
+
+⭐ Why This Project Matters
+
+This project demonstrates:
+
+🚀 Cloud-Native DevOps best practices
+
+☸️ Kubernetes production workflows
+
+📊 Monitoring & observability expertise
+
+💼 Strong portfolio-level implementation
+
+📬 Connect With Me 🤝
+
+If you’re interested in DevOps, Cloud, or Kubernetes, feel free to connect and ⭐ the repository!
