@@ -1,48 +1,57 @@
-🚀 Cloud-Native E-Commerce Deployment & Monitoring
+🚀 Cloud-Native E-Commerce Deployment & Observability
 📌 Project Overview
-Ye project ek production-grade DevOps workflow ko demonstrate karta hai jahan maine Google ki 11 microservices (Online Boutique) ko ek Kubernetes cluster par deploy kiya hai. Is mein infrastructure automation aur real-time monitoring ka use kiya gaya hai.
+This project demonstrates a production-grade DevOps workflow by deploying a complex microservices-based e-commerce platform (Google's Online Boutique) on a Kubernetes cluster. It showcases full automation through Infrastructure as Code (IaC), Container Orchestration, and Full-stack Observability.
 
 🛠 Tech Stack
 Infrastructure as Code (IaC): Terraform
 
-Orchestration: Kubernetes (Kind Cluster)
+Orchestration: Kubernetes (Multi-node Kind Cluster)
 
 Package Management: Helm
 
-Monitoring & Observability: Prometheus & Grafana
+Observability: Prometheus & Grafana
 
-Application: Polyglot Microservices (Go, Python, Node.js, etc.)
+Application: 11 Polyglot Microservices (Go, Python, Node.js, etc.)
 
-🏗 Implementation Details
-1. Automated Infrastructure
-Maine Terraform ka use karte hue ek multi-node (Control-plane aur Worker) Kubernetes cluster provision kiya.
+🏗 Implementation Highlights
+1. Automated Infrastructure Provisioning
+Leveraged Terraform to automate the creation of a local multi-node Kubernetes cluster (1 Control-plane, 1 Worker node) using the Kind provider.
 
-Cluster successfully 2 minutes 20 seconds mein ready ho gaya.
+Successfully provisioned the entire environment in 2 minutes 20 seconds.
 
 2. Microservices Orchestration
-Ek sath 11 microservices ko deploy kiya gaya.
+Deployed 11 interconnected microservices managing everything from the frontend to payment processing.
 
-Saari pods ki health monitor ki aur unhe Running state mein laya.
+Ensured high availability with all pods verified in a Running state.
 
-Frontend access ke liye port-forwarding ka use kiya.
+Configured Port-forwarding to enable local access to the production-style frontend.
 
-3. Full-Stack Monitoring
-Helm charts ke zariye Prometheus aur Grafana setup kiya.
+3. Enterprise Monitoring Stack
+Deployed Prometheus and Grafana using Helm charts for real-time cluster health tracking.
 
-Metrics Server ko patch kiya taake local cluster par resources monitor ho saken.
+Patched the Metrics Server to allow secure resource monitoring within the local Kind environment.
 
-Ek live dashboard create kiya jo CPU (jaisay 15.8% utilisation) aur Memory usage ka data show karta hai.
+Built dynamic dashboards to visualize critical metrics, such as a 15.8% CPU utilization across services.
 
 📊 Project Proof
-(Yahan aap apne screenshots upload kar ke unka link de sakte hain)
+Kubernetes Pods Status
+Figure 1: All microservices successfully deployed and running.
 
-K8s Pods Status: image_329475.jpg
+Grafana Live Monitoring Dashboard
+Figure 2: Real-time resource utilization metrics.
 
-Grafana Live Dashboard: image_31be9f.jpg
+Terraform Infrastructure Setup
+Figure 3: Automated cluster creation log.
 
-🚀 How to Run
-terraform apply --auto-approve
+🚀 Getting Started
+Initialize Infrastructure: terraform apply --auto-approve
 
-kubectl apply -f ./release/kubernetes-manifests.yaml
+Deploy Application: kubectl apply -f ./release/kubernetes-manifests.yaml
 
-kubectl port-forward deployment/monitoring-grafana 3000:3000
+Access Monitoring: kubectl port-forward deployment/monitoring-grafana 3000:3000
+
+⚠️ Final Step (Cleanup)
+To free up local system resources after testing, run:
+
+PowerShell
+terraform destroy --auto-approve
